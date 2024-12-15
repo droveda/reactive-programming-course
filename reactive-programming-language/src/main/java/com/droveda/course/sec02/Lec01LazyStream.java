@@ -11,6 +11,7 @@ public class Lec01LazyStream {
 
     public static void main(String[] args) {
 
+        // if we do not have the terminal operator, the stream operators will not execute
         Stream.of(1)
                 .peek(i -> log.info("received : {}", i))
                 .toList();

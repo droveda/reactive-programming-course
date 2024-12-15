@@ -36,3 +36,27 @@ interface CustomerRepository extends ReactiveCrudRepository<Customer, Long> {
   * No Back pressure!
   * A light weight publisher
   * Request -> Response Model
+
+
+### Mono
+How to create Mono publisher using the Factory methods / to support existing codebase.
+- just -> when the value is in the memory already
+- empty -> No item to emit
+- error -> Emit error
+- fromSupplier -> defer execution by using Supplier<T> (using fromSupplier it will delay the execution, only if a consumer is supplied)
+- fromCallable -> defer execution by using Callable<T> (using fromCallable it will delay the execution, only if a consumer is supplied)
+- fromFuture -> Publisher from CompletableFuture<T>
+- fromRunnable -> Emiting empty after method invotation
+
+See the examples above on the code  
+
+### external service
+java -jar external-services.jar  
+
+
+### Non-blocking IO (Simplified)
+
+we should not use BLOCK  
+
+
+
