@@ -38,9 +38,9 @@ interface CustomerRepository extends ReactiveCrudRepository<Customer, Long> {
   * Request -> Response Model
 
 
-### Mono
+### Mono (This is very important)
 How to create Mono publisher using the Factory methods / to support existing codebase.
-- just -> when the value is in the memory already
+- just -> when the value is in the memory already, no computation is required!
 - empty -> No item to emit
 - error -> Emit error
 - fromSupplier -> defer execution by using Supplier<T> (using fromSupplier it will delay the execution, only if a consumer is supplied)
@@ -59,4 +59,15 @@ java -jar external-services.jar
 we should not use BLOCK  
 
 
+## Summary
+* Reactive programming is a programming paradigm to handle your IO operations more efficiently
+* Reactive Streams is a specification
+  * Reactor is an implementation
+* Mono & Flux
+  * Mono - emits 01 item
+    * Request -> Response
+  * Flux - emits 0...infinite
+* Publisher -> Subscriber
+  * Your app -> DB
+  * Your app <- DB
 
