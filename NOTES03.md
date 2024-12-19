@@ -20,3 +20,6 @@ It can deliver infinite items
 ## Flux - defer
 // how to delay the execution?  
 Flux.defer(() -> Flux.fromIterable(createList()));  
+
+
+# Flux - create / generate

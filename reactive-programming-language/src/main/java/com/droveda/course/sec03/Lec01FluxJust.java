@@ -10,6 +10,10 @@ public class Lec01FluxJust {
         Flux.just(1,  2, 3, "sam", "mike")
                 .subscribe(Util.subscriber());
 
+        Flux.range(3, 5)
+                .map(i -> i / (i-4))
+                .subscribe(Util.subscriber());
+
     }
 
 }
