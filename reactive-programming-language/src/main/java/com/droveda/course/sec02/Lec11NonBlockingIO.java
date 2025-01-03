@@ -22,7 +22,7 @@ public class Lec11NonBlockingIO {
         for (int i = 1; i <= 100; i++) {
 
             //why we should not use BLOCK
-//            var name = client.getProductName(i).block(); //this line will block the execution, it's useful for unit-testing but this should be avoided
+//            var username = client.getProductName(i).block(); //this line will block the execution, it's useful for unit-testing but this should be avoided
 
             client.getProductName(i)
                     .subscribe(Util.subscriber());

@@ -25,7 +25,7 @@ public class Lec09PublisherCreateVsExecution {
         log.info("entered the method");
 
         return Mono.fromSupplier(() -> {
-            log.info("generating name");
+            log.info("generating username");
             Util.sleepSeconds(3);
             return Util.faker().name().firstName();
         });
