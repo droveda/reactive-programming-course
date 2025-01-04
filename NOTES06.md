@@ -33,3 +33,32 @@ Traditional Programming
 * many - replay     -> Flux (N subscribers) - with replay of all values to late subscribers
 
 # Unit Testing - StepVerifier
+
+# Microservices
+1. Spring Web + Java Virtual Thread
+2. Reactive Microservice with Spring WebFlux
+   1. Knowledge of Reactive programming is required
+
+## Miroservices - Backend communication
+1. Spring Web - Sync/Rest
+2. Spring WebFlux - Reactive/Rest
+3. gRPC
+4. RSocket (reactive)
+5. Kafka (event-driven async)
+
+## Microservice - Frontend Communication?
+1. GraphQL
+2. Redis (Added for caching)
+
+## What about resiliency?
+Integration and Resilient Design Patterns for Microservices Architecture
+
+## What about Testing?
+Selenium * Jenkins  
+
+## What about Deployment & Orchestration
+* Docker
+* Kubernetes
+
+# Other courses
+https://www.udemy.com/user/vinoth-selvaraj/
