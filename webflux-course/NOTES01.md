@@ -56,3 +56,12 @@ spring:
 * Repository
   * @Query
 * Database client
+
+
+## Can I Use Spring Data JPA? Yes
+```
+  Mono.fromSupplier(() -> this.jpaRepository.findById(...))
+    .subscribeOn(Schedulcers.buildedElastic()) //very important
+    .map(...)
+    .doOnNext(...)
+```
