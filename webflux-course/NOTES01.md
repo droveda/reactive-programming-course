@@ -6,7 +6,7 @@
 * curl -N http://localhost:8080/reactive/products
 
 
-## R2DBC
+## R2DBC (Reactive Relational Database Connectivity)
 * JPA is a specification
   * It is for traditional synchronous programming/
 * R2DBC is a separate specification!
