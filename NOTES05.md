@@ -65,3 +65,30 @@ Scenario:
 * Use when you are not interested in the result of a producer / chain multiple asychronous calls to execute one by one!
 * Fox ex:
   * You are inserting a bunch of records into the DB. You just need to know if it success or not. Not the intermediate results!
+
+
+## Differece between .map and .flatMap
+
+The primary difference between `.map` and `.flatMap` in reactive programming (and functional programming in general) is how they handle the transformation of elements:
+
+- **`.map`**: Transforms each element emitted by a Publisher into another element. The transformation function returns a single value, and the resulting Publisher emits these transformed values.
+
+- **`.flatMap`**: Transforms each element emitted by a Publisher into another Publisher. The transformation function returns a Publisher, and the resulting Publisher emits the values from these inner Publishers in a flattened manner.
+
+### Example
+
+#### Using `.map`
+Transforms each `Customer` to its name:
+```java
+Flux<Customer> customers = repository.findAll();
+Flux<String> customerNames = customers.map(Customer::getName);
+```
+
+#### Using `.flatMap`
+Transforms each `Customer` to a Publisher that fetches additional details:
+```java
+Flux<Customer> customers = repository.findAll();
+Flux<CustomerDetails> customerDetails = customers.flatMap(customer -> fetchDetails(customer.getId()));
+```
+
+In summary, use `.map` when you want to transform elements directly, and use `.flatMap` when you need to work with Publishers resulting from the transformation.

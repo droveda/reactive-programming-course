@@ -5,7 +5,7 @@
 You can have multiple operators, you can build a pipeline of operators.  
 
 ### List of Operators (not exhaustive)
-* fulter
+* filter
 * map
 * log
 * take
