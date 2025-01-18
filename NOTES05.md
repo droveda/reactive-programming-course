@@ -72,8 +72,24 @@ Scenario:
 The primary difference between `.map` and `.flatMap` in reactive programming (and functional programming in general) is how they handle the transformation of elements:
 
 - **`.map`**: Transforms each element emitted by a Publisher into another element. The transformation function returns a single value, and the resulting Publisher emits these transformed values.
+The .map is good for some kind of in-memory computation, for instance:
+```
+UserService.getUserId("sam")
+  .map(userId -> "Hello " + userId)
+  .subscribe(Util.subscriber());
+```
 
 - **`.flatMap`**: Transforms each element emitted by a Publisher into another Publisher. The transformation function returns a Publisher, and the resulting Publisher emits the values from these inner Publishers in a flattened manner.
+The flat map is good when you need to call for instance an external service or a database which returns a Mono of Lux Type.  
+The flatMap is going to subscribe to the inner publisher  
+flatMap is used to flatten the inner publisher / to subscribe to the inner publisher  
+Sequential non-blocking IO calls!  
+For instance:    
+```
+ UserService.getUserId("sam")
+                .flatMap(PaymentService::getUserBalance)
+                .subscribe(Util.subscriber());
+```
 
 ### Example
 
@@ -92,3 +108,36 @@ Flux<CustomerDetails> customerDetails = customers.flatMap(customer -> fetchDetai
 ```
 
 In summary, use `.map` when you want to transform elements directly, and use `.flatMap` when you need to work with Publishers resulting from the transformation.
+
+
+
+## what is the difference between .transform and .as?
+
+The `.transform` and `.as` operators in Reactor are both used to apply transformations to a `Publisher`, but they have different use cases and behaviors.
+
+- **`.transform`**: This operator is used to apply a transformation function to a `Publisher` and return a new `Publisher`. The transformation function is applied immediately and can be used to chain multiple transformations.
+
+- **`.as`**: This operator is used to apply a transformation function to a `Publisher` and return a different type. It is typically used to convert a `Publisher` to another type, such as applying a repository method that returns a `Publisher`.
+
+Here is an example to illustrate the difference:
+
+```java
+import reactor.core.publisher.Flux;
+
+public class TransformVsAsExample {
+
+    public static void main(String[] args) {
+        Flux<Integer> flux = Flux.just(1, 2, 3, 4, 5);
+
+        // Using .transform to apply a transformation function
+        Flux<Integer> transformedFlux = flux.transform(f -> f.map(i -> i * 2));
+        transformedFlux.subscribe(System.out::println); // Output: 2, 4, 6, 8, 10
+
+        // Using .as to apply a transformation function and return a different type
+        Flux<Integer> asFlux = flux.as(f -> f.map(i -> i * 2));
+        asFlux.subscribe(System.out::println); // Output: 2, 4, 6, 8, 10
+    }
+}
+```
+
+In this example, both `.transform` and `.as` are used to double the values in the `Flux`, but `.as` can be used to return a different type if needed.

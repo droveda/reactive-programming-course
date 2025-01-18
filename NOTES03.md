@@ -62,5 +62,5 @@ Flux.Generate(
 * Generate
   * Accepts a **Consumer<SynchronousSink<T>>**
   * Consumer is invoked again and again
-  * Consumer can emit only on element. Downstream demend is respected
+  * Consumer can emit only on element. Downstream demand is respected
   * N/A (Thread-safe)
