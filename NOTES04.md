@@ -56,3 +56,15 @@ Shared.
 * replay(n).autoConnect(0) -> Cache the emitted item for late subscribers
 
 
+# Context
+It is simillar to ThreadLocal  
+
+* Metadata about the request
+* Simple Key/value pairs
+  * An immutable Map!
+* Cross cutting concerns
+  * Authentication
+  * Rate limiting
+  * Monitoring/Tracing
+  * ..
+  * ..

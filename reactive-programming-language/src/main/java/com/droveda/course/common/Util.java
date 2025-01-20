@@ -47,6 +47,14 @@ public class Util {
         }
     }
 
+    public static void sleep(Duration duration) {
+        try {
+            Thread.sleep(duration.toMillis());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static <T> UnaryOperator<Flux<T>> fluxLogger(String name) {
 
         return flux -> flux
