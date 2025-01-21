@@ -68,3 +68,25 @@ It is simillar to ThreadLocal
   * Monitoring/Tracing
   * ..
   * ..
+
+
+# Batching
+* Assumption
+  * You use Kafka / RabbitMQ / Pulsar
+  * You have a Flux<T> - never ending stream of messages.
+* Operators
+  * buffer
+  * window
+  * group
+
+## Buffer
+* collect the items every five seconds, put it in a list and insert into the database
+
+## Window
+* the window operator opens a new flux every 5 seconds for instance or every 5 items
+* window will have only one flux opened at a time
+
+## GroupBy
+* It will create a new flux for every group that was created grouping by some key or characteristc of the data, and will route the data to the corresponding flux based on the key.
+* Group by will have multple fluxes open 
+* you should have low cardinality (think about the key that you will use, for example (color/genre, etc...))
