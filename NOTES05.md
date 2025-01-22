@@ -28,11 +28,11 @@
 * **startWith**
   * useful when you have multiple producers and you want to check one producer first before you go to another producer. (Example cache)
 * **concat**
-  * it is the other whay of the startWith
+  * it is the other way of the startWith
 * **merge**
   * it will allow subscribing to multiple producers at the same time (example getting flights from the flight companies)
 * **zip**
-  * It looks like the merge nut it is all or nothing (you need a response from all the producers (they shoukld give one item))
+  * It looks like the merge but it is all or nothing (you need a response from all the producers (they should give one item))
 * **flatMap**
   * the flaMap will be subscribing to the inner publisher
 * **concatMap**
@@ -80,7 +80,7 @@ UserService.getUserId("sam")
 ```
 
 - **`.flatMap`**: Transforms each element emitted by a Publisher into another Publisher. The transformation function returns a Publisher, and the resulting Publisher emits the values from these inner Publishers in a flattened manner.
-The flat map is good when you need to call for instance an external service or a database which returns a Mono of Lux Type.  
+The flat map is good when you need to call for instance an external service or a database which returns a Mono or Flux Type.  
 The flatMap is going to subscribe to the inner publisher  
 flatMap is used to flatten the inner publisher / to subscribe to the inner publisher  
 Sequential non-blocking IO calls!  

@@ -24,6 +24,7 @@ public class Lec07FluxVsList {
         System.out.println("---");
 
         NameGenerator.getNamesFlux(10)
+                .doOnComplete(() -> System.out.println("Completed"))
                 .subscribe(Util.subscriber());
 
 

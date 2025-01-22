@@ -24,6 +24,10 @@ public class Lec03MonoSubscribe {
 
         // just my test
         test2();
+
+        Mono.just("some data")
+                .map(s -> s + " string length: " + s.length())
+                .subscribe(value -> log.info("value: {}", value));
     }
 
     private static void test2() {

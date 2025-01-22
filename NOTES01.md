@@ -33,9 +33,9 @@ Each and every thread will have its own stack memory like this.
 
 ### IO - Inboud / Outbound
 * **Sync** -> (I will can the isurance company and wait in the line for an answer)
-* **Async**I -> (I will delegate the job to call the insurance company and wait for the response to my friend)
+* **Async** -> (I will delegate the job to call the insurance company and wait for the response to my friend)
 * **Non-blocking** -> (I will give my phone number to the attendant and he will call me back when he has the answer. This way I can watch a moive or read a book, I am not blocked)
-* **Non-blocking + async** -> (I will give my friend phone number)
+* **Non-blocking + async** -> (I will give my friend's phone number)
 
 ### Communication Patterns
 

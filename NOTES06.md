@@ -28,7 +28,7 @@ Traditional Programming
 
 ## Sink Types
 * one               -> mono (N subscribers)
-* many - unicast    -> Flux (1 Subscriber)  - Subs can join later if required. messages will be stored in the memort
+* many - unicast    -> Flux (1 Subscriber)  - Subs can join later if required. messages will be stored in the memory
 * many - multicast  -> Flux (N subscribers) - late subscribers can not see the messages
 * many - replay     -> Flux (N subscribers) - with replay of all values to late subscribers
 

@@ -53,7 +53,7 @@ Flux.Generate(
 )
 ```
 
-### Summary - Flux - CreateGenerate
+### Summary - Flux - Create/Generate
 * Create
   * Accepts a **Consumer<FluxSink<T>>**
   * Consumer is invoked only once
