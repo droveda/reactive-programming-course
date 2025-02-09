@@ -140,4 +140,5 @@ public class TransformVsAsExample {
 }
 ```
 
-In this example, both `.transform` and `.as` are used to double the values in the `Flux`, but `.as` can be used to return a different type if needed.
+In this example, both `.transform` and `.as` are used to double the values in the `Flux`, but `.as` can be used to return a different type if needed.  
+`.transform` think about reuse.  
